@@ -31,6 +31,7 @@ let items = [
           <input type="number" placeholder="quantity" onchange='inputChange(${i}, "${item.name}", "${item.price}", "${item.image}")'/>
           <button>Buy Item</button>
       </li>`
+      
   })
   
 
