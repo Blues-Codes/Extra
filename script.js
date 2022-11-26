@@ -54,17 +54,3 @@ function inputChange(i, name, price,image) {
     }
 
 }
-function showCart() {
-    let cartItems = document.querySelector('#cart')
-    let grandTotal=0;
-    cartItems.innerHTML = ''
-    cart.forEach((item,i)=>{
-        grandTotal += item.price * item.quantity
-        cartItems.innerHTML += `<li>
-        <div>Name: ${item.name}</div>
-        <div>Quantity: ${item.quantity}</div>
-        <image src="${item.image}" />
-    </li>`  
-    })
-    document.querySelector('#grandTotal').innerHTML = '$'+ grandTotal;
-}
