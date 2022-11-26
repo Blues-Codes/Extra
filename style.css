@@ -1,0 +1,26 @@
+*{
+    transition: all ls;
+}
+
+body {
+    padding: 50px;
+    background-color:lightseagreen;
+    display: flex;
+    flex-direction: row;
+}
+h2 {
+    color:black
+    
+}
+
+#cart {
+    background-color: salmon;
+}
+
+img {
+    width: 50px
+}
+
+#cart, #items {
+    width:50vw;
+}

@@ -31,7 +31,40 @@ let items = [
           <input type="number" placeholder="quantity" onchange='inputChange(${i}, "${item.name}", "${item.price}", "${item.image}")'/>
           <button>Buy Item</button>
       </li>`
-      
+
   })
   
+let cart = []
 
+function inputChange(i, name, price,image) {
+    console.log('I want to buy the ',i,' item named, ',name, ' that costs $',price)
+    let listItem = document.querySelectorAll('li')[i]
+    let input = listItem.querySelector('input')
+    let button = listItem.querySelector('button')
+
+    button.onclick = function(){
+        cart.push({
+            quantity: input.value,
+            name: name,
+            price: price,
+            image: image
+        })
+        console.log(cart)
+        showCart()
+    }
+
+}
+function showCart() {
+    let cartItems = document.querySelector('#cart')
+    let grandTotal=0;
+    cartItems.innerHTML = ''
+    cart.forEach((item,i)=>{
+        grandTotal += item.price * item.quantity
+        cartItems.innerHTML += `<li>
+        <div>Name: ${item.name}</div>
+        <div>Quantity: ${item.quantity}</div>
+        <image src="${item.image}" />
+    </li>`  
+    })
+    document.querySelector('#grandTotal').innerHTML = '$'+ grandTotal;
+}
